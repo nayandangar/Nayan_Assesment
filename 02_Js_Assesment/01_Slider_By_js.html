@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+            
+        }
+
+        .main {
+            font-family: Arial;
+        
+            width: 900px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        h3 {
+            background: #fff;
+            color: #3498db;
+            font-size: 36px;
+            line-height: 100px;
+            margin: 10px;
+            padding: 2%;
+            position: relative;
+            text-align: center;
+        }
+
+        .action {
+            display: block;
+            margin: 100px auto;
+            width: 100%;
+            text-align: center;
+        }
+
+        .action a {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #f30;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .action a:hover {
+            background: #000;
+        }
+        .slider-for img{
+            height: 600px;
+            max-width:600px;
+            margin: auto;
+        }
+        .slider-nav .slick-slide{
+            /* width: 134px !important; */
+            margin: 0 16px;
+        }
+        .slider-nav img{
+            height: 100px;
+            width:116px;
+            margin: auto;
+            opacity: 0.6;
+        }
+        .slider-nav{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .slick-arrow{
+            height: 45px;
+            width: 100px;
+            color: white;
+            font-size: 25px;
+            border-radius: 50%;
+            padding: 10px;
+            background: transparent;
+            transition: 0.5s ease-in-out;
+            border: none;
+
+        }
+        .slick-arrow:hover{
+            color:black;
+            background:rgb(138, 127, 127);  
+            
+        }
+       
+        .slider-nav .slick-current img{
+            opacity: unset;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="slider slider-for">
+            <div>
+                <img src="https://hips.hearstapps.com/hmg-prod/images/rainbow-colored-fruit-and-vegetable-lunch-bowl-royalty-free-image-1609759532.?resize=2048:*"  alt="">
+            </div>
+            <div>
+                <img src="https://cdn3.foodviva.com/static-content/food-images/snacks-recipes/dahi-puri/dahi-puri.jpg" alt="">
+            </div>
+            <div>
+               <img src="https://manjulaskitchen.com/wp-content/uploads/veggie_burger.jpg" alt="">
+            </div>
+            <div>
+               <img src="https://www.barbarabakes.com/wp-content/uploads/2014/04/Chocolate-Cake-Oreo-Cheesecake-Filling-Barbara-Bakes-1.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.pillsbury.in/wp-content/uploads/2021/09/Cupcakes.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.sidechef.com/recipe/5742dc5d-656e-4bbf-984b-299c02c2a471.jpg" alt="">
+            </div>
+        </div>
+        <div class="slider slider-nav">
+            <div>
+                <img src="https://hips.hearstapps.com/hmg-prod/images/rainbow-colored-fruit-and-vegetable-lunch-bowl-royalty-free-image-1609759532.?resize=2048:*" alt="">
+            </div>
+            <div>
+                <img src="https://cdn3.foodviva.com/static-content/food-images/snacks-recipes/dahi-puri/dahi-puri.jpg" alt="">
+            </div>
+            <div>
+               <img src="https://manjulaskitchen.com/wp-content/uploads/veggie_burger.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.barbarabakes.com/wp-content/uploads/2014/04/Chocolate-Cake-Oreo-Cheesecake-Filling-Barbara-Bakes-1.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.pillsbury.in/wp-content/uploads/2021/09/Cupcakes.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.sidechef.com/recipe/5742dc5d-656e-4bbf-984b-299c02c2a471.jpg">
+            </div>
+        </div>
+        
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots:false,
+            focusOnSelect: true,
+            centerMode: true,
+
+        });
+
+        $('a[data-slide]').click(function (e) {
+            e.preventDefault();
+            var slideno = $(this).data('slide');
+            $('.slider-nav').slick('slickGoTo', slideno - 1);
+        });
+
+        document.querySelector('.slick-prev.slick-arrow').innerHTML = '<i class="fa-solid fa-angle-left"></i>'
+        document.querySelector('.slick-next.slick-arrow').innerHTML = '<i class="fa-solid fa-angle-right"></i>'
+
+    </script>
+</body>
+
+</html>
